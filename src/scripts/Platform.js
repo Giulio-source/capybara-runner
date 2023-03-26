@@ -10,7 +10,7 @@ export class Platform {
     this.diamondsOffsetMin = 100;
     this.diamondsOffsetMax = 500;
 
-    this.dx = -3;
+    this.dx = -6 / (window.devicePixelRatio || 1);
 
     this.rows = rows;
     this.cols = cols;

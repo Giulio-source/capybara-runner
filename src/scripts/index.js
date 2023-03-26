@@ -2,5 +2,21 @@ import "pixi-sound";
 
 import { App } from "./App";
 
-const app = new App();
-app.run();
+const fontName = "Press Start 2P";
+
+if (window.innerWidth >= 1024) {
+  window.onload = function () {
+    WebFont.load({
+      // this event is triggered when the fonts have been rendered, see https://github.com/typekit/webfontloader
+      active: function () {
+        const app = new App();
+        app.run();
+      },
+
+      // multiple fonts can be passed here
+      google: {
+        families: [fontName],
+      },
+    });
+  };
+}

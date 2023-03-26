@@ -50,7 +50,7 @@ export class Hero {
           volume: 0.1,
         });
       } else {
-        this.dy = -25;
+        this.dy = window.devicePixelRatio > 1 ? -30 : -25;
         Globals.resources.hop.sound.play({
           volume: 0.1,
         });
@@ -104,7 +104,7 @@ export class Hero {
   update() {
     if (!this.platform) {
       ++this.dy;
-      this.sprite.y += this.dy * 0.5;
+      this.sprite.y += this.dy / window.devicePixelRatio;
     }
 
     if (this.sprite.y > window.innerHeight) {
